@@ -9,9 +9,11 @@ func update_score(score):
 # Make game over HUD visible and update final score.
 func game_over(score):
 	$ScoreBox/EndScoreLabel.text = str(score)
+	$ScoreBox/HighScoreLabel.text = str(SaveLoad.contents_to_save.high_score)
 	$GameOver.visible = true
 	$ScoreBox.visible = true
 	$ScoreBox/EndScoreLabel.visible = true
+	$ScoreBox/HighScoreLabel.visible = true
 	$StartButton.visible = true
 
 # Used to show/hide get ready graphic. 

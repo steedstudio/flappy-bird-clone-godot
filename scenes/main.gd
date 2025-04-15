@@ -7,6 +7,7 @@ var current_score = 0
 #Called when the node enters the scene tree for the first time. 
 func _ready():
 	get_ready()
+	SaveLoad._load()
 
 # Spawn new pipes at a fixed rate set by timer. 
 func _on_pipe_spawn_timer_timeout():
@@ -31,7 +32,11 @@ func _on_player_body_entered():
 	for i in spawned_pipes:
 		i.disable_collision()
 	$Ground/AnimationPlayer.stop()
+	if current_score > SaveLoad.contents_to_save.high_score:
+		SaveLoad.contents_to_save.high_score = current_score
+		SaveLoad._save()
 	$HUD.game_over(current_score)
+
 
 # Update current HUD score when passing through a pipe. 
 func _on_score_signal_received():
