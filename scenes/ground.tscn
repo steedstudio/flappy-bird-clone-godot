@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvi5a67nkrd6k"]
+
+[ext_resource type="Shader" uid="uid://b8nikbtlwuipp" path="res://shaders/no_jitter.gdshader" id="1_mi8v4"]
+[ext_resource type="Texture2D" uid="uid://b1q241nt3imwu" path="res://art/ground.png" id="1_pybca"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmksl"]
+shader = ExtResource("1_mi8v4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pybca"]
+size = Vector2(154, 56)
+
+[node name="Ground" type="StaticBody2D"]
+z_index = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+material = SubResource("ShaderMaterial_lmksl")
+texture = ExtResource("1_pybca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pybca")
