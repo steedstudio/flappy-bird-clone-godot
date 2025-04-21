@@ -11,7 +11,6 @@ func _ready():
 
 # Spawn new pipes at a fixed rate set by timer. 
 func _on_pipe_spawn_timer_timeout():
-	print("Pipe spawned!")
 	# New pipe spawn instance.
 	var pipes_spawn = pipes_scene.instantiate()
 	
