@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Flappy Bird Project"
+config/name="Flappy Bird Remake"
 run/main_scene="uid://bi8e0hjcwnsfd"
-config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="uid://b6mrtkn4gt25e"
 
 [autoload]
 
@@ -23,8 +23,6 @@ SaveLoad="*res://scenes/SaveLoad.gd"
 
 window/size/viewport_width=144
 window/size/viewport_height=256
-window/size/window_width_override=455
-window/size/window_height_override=810
 window/stretch/mode="canvas_items"
 
 [input]
@@ -46,3 +44,5 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
